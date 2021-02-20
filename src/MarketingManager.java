@@ -1,0 +1,3 @@
+class MarketingManager extends Employee{
+
+}
