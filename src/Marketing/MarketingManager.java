@@ -22,8 +22,42 @@ class MarketingManager extends Employee{
         return employees.size() * 250 ;
     }
 
+    @Override
+    String getEmployeeName() {
+        return employeeName;
+    }
+
+    @Override
+    void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    @Override
+    MarketingManager getManager() {
+        return manager;
+    }
+
+    @Override
+    void setManager(MarketingManager manager) {
+        this.manager = manager;
+    }
+
+    @Override
+    long getMarketingID() {
+        return marketingID;
+    }
+
+    @Override
+    void setMarketingID(long marketingID) {
+        this.marketingID = marketingID;
+    }
+
     ArrayList<Employee> getEmployees(){
         return employees;
+    }
+
+    void setEmployees(ArrayList<Employee> employees) {
+        this.employees = employees;
     }
 
     void addEmployee(Employee e1){

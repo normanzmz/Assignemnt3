@@ -1,5 +1,6 @@
 package Marketing;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,16 +36,28 @@ public class Main {
         Mary.addEmployee(Jim);
         Mary.addEmployee(Janet);
 
-      /*  String johnEmployeeText = "";
+        John.setEmployees(johnEmployees);
 
-        for (int i = 0; i < John.getEmployees().size(); i++){
-            johnEmployeeText = johnEmployeeText + John.getEmployees().get(i).getEmployeeName();
 
-        }*/
+        ArrayList<String> johnEmployeeList = John.getEmployees().stream().map(Employee::getEmployeeName).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<String> maryEmployeeList = Mary.getEmployees().stream().map(Employee::getEmployeeName).collect(Collectors.toCollection(ArrayList::new));
 
-        ArrayList<String> employeeList = John.getEmployees().stream().map(Employee::getEmployeeName).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<Integer> johnClientList = John.getClients().stream().map(Client::getClientID).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<Integer> maryClientList = Mary.getClients().stream().map(Client::getClientID).collect(Collectors.toCollection(ArrayList::new));
 
-        System.out.println("Marketing Manager: " + John.getEmployeeName() + ". " + "Employees:" + employeeList );
+        System.out.println("Marketing Manager: " + John.getEmployeeName() + ". " + "Employees:" + johnEmployeeList + " Clients: " + johnClientList);
+        System.out.println("Marketing Manager: " + Mary.getEmployeeName() + ". " + "Employees:" + maryEmployeeList + " Clients: " + maryClientList);
+
+        System.out.println("Employee: " + Peter.getEmployeeName() + ". " + "Marketing Manager: " + Peter.getManager().getEmployeeName());
+        System.out.println("Employee: " + Jim.getEmployeeName() + ". " + "Marketing Manager: " + Jim.getManager().getEmployeeName());
+        System.out.println("Employee: " + Janet.getEmployeeName() + ". " + "Marketing Manager: " + Janet.getManager().getEmployeeName());
+
+        ArrayList<String> tedEmployeeList = Ted.getEmployees().stream().map(Employee::getEmployeeName).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<String> geoffEmployeeList = Geoff.getEmployees().stream().map(Employee::getEmployeeName).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<String> amandaEmployeeList = Amanda.getEmployees().stream().map(Employee::getEmployeeName).collect(Collectors.toCollection(ArrayList::new));
+        System.out.println("Client ID: " + Ted.getClientID() + " Marketing Employee: " + tedEmployeeList);
+        System.out.println("Client ID: " + Geoff.getClientID() + " Marketing Employee: " + geoffEmployeeList);
+        System.out.println("Client ID: " + Amanda.getClientID() + " Marketing Employee: " + amandaEmployeeList);
 
     }
 }
