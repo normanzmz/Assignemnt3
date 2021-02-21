@@ -1,8 +1,19 @@
+package Marketing;
+
+import java.util.ArrayList;
+
 public class Client {
 
     //attributes
     private int clientID;
     private String clientName;
+    ArrayList<Employee> employees;
+
+    Client(int clientID, String clientName){
+        this.clientID = clientID;
+        this.clientName = clientName;
+        this.employees = new ArrayList<Employee>();
+    }
 
     //constructors
     int getClientID() {
@@ -24,6 +35,14 @@ public class Client {
     //functions
     public double totalSales(){
         return 0;
+    }
+
+    void addEmployee(Employee e1){
+        employees.add(e1);
+    }
+
+    ArrayList<Employee> getEmployees(){
+        return employees;
     }
 
 

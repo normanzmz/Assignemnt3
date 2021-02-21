@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package Marketing;
 
 class MarketingAssociate extends Employee{
 
@@ -7,14 +7,14 @@ class MarketingAssociate extends Employee{
     protected long marketingID;
 
     // constructors
-    MarketingAssociate(String employeeName, long marketingID, MarketingManager manager){
+    MarketingAssociate(String employeeName, long marketingID, MarketingManager manager) {
         this.employeeName = employeeName;
         this.marketingID = marketingID;
         this.manager = manager;
     }
 
     // functions
-    private double bonus(){
+    double bonus(){
         return clients.size() * 500 ;
     }
 }

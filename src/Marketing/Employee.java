@@ -1,3 +1,5 @@
+package Marketing;
+
 import java.util.ArrayList;
 
 abstract class Employee {
@@ -7,6 +9,7 @@ abstract class Employee {
     protected MarketingManager manager;
     protected long marketingID;
     ArrayList<Client> clients = new ArrayList<>();
+
 
     // getters and setters
     String getEmployeeName() {
@@ -33,11 +36,8 @@ abstract class Employee {
         this.marketingID = marketingID;
     }
 
-    public boolean addClient(int clientID, String clientName){
-        Client client = new Client();
-        client.setClientID(clientID);
-        client.setClientName(clientName);
-        return clients.add(client);
+    public boolean addClient(Client c1){
+        return clients.add(c1);
     }
 
     public ArrayList<Client> getClients(){

@@ -1,3 +1,5 @@
+package Marketing;
+
 import java.util.ArrayList;
 
 class MarketingManager extends Employee{
@@ -16,7 +18,16 @@ class MarketingManager extends Employee{
     }
 
     // functions
-    private double bonus(){
+    double bonus(){
         return employees.size() * 250 ;
     }
+
+    ArrayList<Employee> getEmployees(){
+        return employees;
+    }
+
+    void addEmployee(Employee e1){
+        employees.add(e1);
+    }
+
 }
